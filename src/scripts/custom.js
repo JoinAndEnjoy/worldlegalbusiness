@@ -1,6 +1,10 @@
-$( document ).ready(function() {
-  var wow = new WOW(
-  {
+$(window).load(function() {
+//$( document ).ready(function() {
+
+ $(".my-loader").css("display","none");
+
+ var wow = new WOW(
+ {
     boxClass:     'wow',      // animated element css class (default is wow)
     animateClass: 'animated', // animation css class (default is animated)
     offset:       0,          // distance to the element when triggering the animation (default is 0)
@@ -13,9 +17,9 @@ $( document ).ready(function() {
     scrollContainer: null // optional scroll container selector, otherwise use window
   }
   ); 
-  wow.init();
+ wow.init();
 
-  fadeOutTransition();
+ fadeOutTransition();
 
 });
 
