@@ -551,6 +551,7 @@ a.btn-flat{
 			height: initial;
 			padding-top: 20px;
 			padding-bottom: 20px;
+			margin-top: 7px;
 		}
 
 		.wrapper{
@@ -838,8 +839,8 @@ a.btn-flat{
 			bottom: 10%;
 
 			@include respond-to(handhelds-and-medium) { 
-					position: relative;
-				}
+				position: relative;
+			}
 
 			a{
 				margin-left: 8px;
