@@ -1,0 +1,37 @@
+{
+  "name": "scrollreveal",
+  "description": "Easy scroll animations for web and mobile browsers.",
+  "homepage": "https://scrollrevealjs.org",
+  "main": [
+    "dist/scrollreveal.js"
+  ],
+  "authors": [
+    "Julian Lloyd"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "scroll",
+    "reveal",
+    "css",
+    "animation",
+    "javascript",
+    "mobile"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components"
+  ],
+  "version": "3.0.5",
+  "_release": "3.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.5",
+    "commit": "a67613a7ffafdf6b98881142e16249548b7a74c1"
+  },
+  "_source": "git://github.com/jlmakes/scrollreveal.js.git",
+  "_target": "~3.0.5",
+  "_originalSource": "scrollreveal",
+  "_direct": true
+}

@@ -1,0 +1,160 @@
+//Style for footer
+@import 'mixins';
+
+#footer{
+	color: white;
+	background-color: #1c2826;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	.row{
+		margin-left: 0px; 
+		margin-right: 0px;
+		padding-top: 50px;
+	}
+
+	hr.mobile-divider{
+			border:none;
+			height: 1px;
+			width: 20px;
+			background-color: white;
+			opacity: 0.3;
+			@include respond-to(wide-screens) { 
+				display: none;
+			}
+		}
+
+	a{
+		color: white;
+		display: block;
+		text-decoration: none;
+		@include transition-fade(0.3s);
+		margin-bottom: 7px;
+	}
+
+	a:hover{
+		//text-decoration: underline;
+		opacity: 0.5;
+	}
+
+	
+
+	span{
+		display: block;
+		margin-bottom: 7px;
+	}
+
+	.leftside{
+		text-align: center;
+		padding-bottom: 50px;
+		padding-right: 50px;
+		@include respond-to(handhelds-and-medium) { 
+			
+			border-right: none;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		hr{
+			width: 25%;
+			margin: auto;
+			margin-top: 25px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.center{
+		text-align: center;
+		padding-top: 33px;
+		a{
+			font-size: 14px;
+			font-weight: 400;
+		}
+	}
+
+	.rightside{
+		text-align: right;
+		padding-top: 33px;
+		@include respond-to(handhelds-and-medium) { 
+			padding-top: 0px;
+			text-align: center;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-top: 78px;
+		}
+
+		
+
+		span{
+			display: block;
+			margin-bottom: 7px;
+			font-size: 17px;
+		}
+	}
+
+	.social{
+		@include respond-to(handhelds-and-medium) { 
+			margin-top: 40px;
+		}
+	}
+
+	.fa{
+		display: inline-block;
+		text-decoration: none;
+		margin-right: 10px;
+	}
+}
+
+.footer-title{
+	font-size: 20px;
+}
+
+.footer-subtitle{
+	font-size: 25px;
+	font-family:"Playfair Display";
+}
+
+.info-footer{
+	margin-top: 30px;
+	font-size: 14px;
+	span{
+		margin-top: 7px;
+	}
+}
+
+//Credits
+
+#credits{
+	background-color: #151e1c;
+	color: white;
+	font-size: 15px;
+	@include respond-to(handhelds-and-medium) { 
+		text-align: center;
+	}
+
+	.container-fluid{
+		padding-top: 33px;
+		padding-bottom: 30px;
+		padding-left: 69px;
+		padding-right: 69px;
+		opacity: 0.4;
+	}
+
+	.col-sm-6:nth-of-type(2){
+		text-align: right;
+		@include respond-to(handhelds-and-medium) { 
+			margin-top: 20px;
+			text-align: center;
+		}
+	}
+
+	a{
+		color: white;
+		text-decoration: underline;
+	}
+}
+
+.flat-link{
+	text-decoration: underline;
+	font-size: 17px;
+}
