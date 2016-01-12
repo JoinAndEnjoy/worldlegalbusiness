@@ -84,7 +84,7 @@ gulp.task('build-useref', function() {
 });
 
 
-gulp.task('default', ['clean','images'],function(){
+gulp.task('default', ['clean','images','icons'],function(){
   return gulp.src('src/*.html')
   .pipe(plumber({
     errorHandler: function (error) {
