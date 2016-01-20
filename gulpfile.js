@@ -115,7 +115,19 @@ gulp.task('build-en', function() {
   .pipe(gulp.dest('public/en'));
 });
 
-gulp.task('default', ['clean','images','icons','build-es','build-en'],function(){
+gulp.task('dest-php', function(){
+   //process.stdout.write("Enter here");
+   var phpSrc = 'src/scripts/**/*.php';
+   return gulp.src(phpSrc)
+   .pipe(plumber({
+    errorHandler: function (error) {
+      console.log(error.message);
+      this.emit('end');
+    }}))
+  .pipe(gulp.dest('public/scripts/'))
+});
+
+gulp.task('default', ['clean','images','icons','build-es','build-en','dest-php'],function(){
   return gulp.src('src/*.html')
   .pipe(plumber({
     errorHandler: function (error) {

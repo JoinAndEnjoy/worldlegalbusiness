@@ -26,10 +26,10 @@
 	<div class = "my-loader">
 		<div class = "my-loader-div">
 			<div class="sk-three-bounce">
-		        <div class="sk-child sk-bounce1"></div>
-		        <div class="sk-child sk-bounce2"></div>
-		        <div class="sk-child sk-bounce3"></div>
-		     </div>
+				<div class="sk-child sk-bounce1"></div>
+				<div class="sk-child sk-bounce2"></div>
+				<div class="sk-child sk-bounce3"></div>
+			</div>
 		</div>
 	</div>
 	<div class = "hamburger animated fadeInLeftLittle" id= "open-nav">
@@ -94,13 +94,16 @@
 				<span class = "vertical-bar"></span>
 				<h3>Contact us</h3>
 				<div class = "form-div">
-					<label for="male">Name</label>
-					<input id = "name" name = "fname" type = "text" placeholder = "Name" class = "simplebox form-control" required>
-					<label for="email">Email</label>
-					<input id = "email" name = "email" type = "text" placeholder = "Email" class = "simplebox form-control" required>
-					<label for="message">Message</label>
-					<textarea id = "message" name = "message" type = "text" placeholder = "Message" class = "simplebox form-control" rows = 4 required></textarea>
-					<a href="" class = "btn-flat btn-main">Send</a>
+					<form id="contact-valid-form" action="../scripts/contact.php" method="POST" role="form">
+						<label for="male">Name</label>
+						<input id = "name" name = "name" type = "text" placeholder = "Name" class = "simplebox form-control field-validation required" data-validation-type="string">
+						<label for="email">Email</label>
+						<input id = "email" name = "email" type = "text" placeholder = "Email" class = "simplebox form-control field-validation required" data-validation-type="email">
+						<label for="message">Message</label>
+						<textarea id = "message" name = "message" placeholder = "Message" class = "simplebox form-control field-validation required" rows = 4 required></textarea>
+						<button type = "submit" href="" class = "btn-flat btn-black">Send</button>
+						<div class="alert-validate-form"></div>
+					</form>
 				</div>
 			</div>
 		</div>
