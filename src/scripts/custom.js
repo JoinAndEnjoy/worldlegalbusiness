@@ -183,26 +183,34 @@ $(".person").click(function(event){
 
 });
 
+var relativepath = "images";
+var actual_url = window.location.href;
+if(actual_url.indexOf("/en/") != -1||actual_url.indexOf("/es/") != -1){
+  var relativepath = "../images";
+}else{
+  window.location.href = "en/index.html";
+}
+
 $("#angela").click(function(){
-  $(".img-wrapper").css("background","url(images/team-1.jpg) no-repeat center center");
+  $(".img-wrapper").css("background","url("+ relativepath+"/team-1.jpg) no-repeat center center");
   $(".description h3").html("Ángela Bejarano Daza");
   $(".description p").removeClass("active");
   $("#descr-angela").addClass("active");
 });
 $("#camilo").click(function(){
-  $(".img-wrapper").css("background","url(images/team-2.jpg) no-repeat center center");
+  $(".img-wrapper").css("background","url("+ relativepath+"/team-2.jpg) no-repeat center center");
   $(".description h3").html("Camilo Ossa Bocanegra");
   $(".description p").removeClass("active");
   $("#descr-camilo").addClass("active");
 });
 $("#carlos").click(function(){
-  $(".img-wrapper").css("background","url(images/team-3.jpg) no-repeat center center");
+  $(".img-wrapper").css("background","url("+ relativepath+"/team-3.jpg) no-repeat center center");
   $(".description h3").html("Carlos Ossa Hernández");
   $(".description p").removeClass("active");
   $("#descr-carlos").addClass("active");
 });
 $("#claudia").click(function(){
-  $(".img-wrapper").css("background","url(images/team-4.jpg) no-repeat center center");
+  $(".img-wrapper").css("background","url("+ relativepath+"/team-4.jpg) no-repeat center center");
   $(".description h3").html("Claudia Parra Gutierrez");
   $(".description p").removeClass("active");
   $("#descr-claudia").addClass("active");
@@ -210,8 +218,22 @@ $("#claudia").click(function(){
 
 
 
+$(".sw-espanol").click(function(){
+  var url_array = window.location.href.split("/");
+  var length = url_array.length;
+  var finalUrl = "../es/"+url_array[length-1];
+  fadeInTransition().done(function(){
+    window.location.href = finalUrl;
+  });
+});
 
-
-
+$(".sw-english").click(function(){
+  var url_array = window.location.href.split("/");
+  var length = url_array.length;
+  var finalUrl = "../en/"+url_array[length-1];
+  fadeInTransition().done(function(){
+    window.location.href = finalUrl;
+  });
+});
 
 

@@ -83,8 +83,34 @@ gulp.task('build-useref', function() {
   .pipe(gulp.dest('./public/'));
 });
 
+gulp.task('build-es', function() {
+  gulp.src('src/es/*.html')
+  .pipe(plumber({
+    errorHandler: function (error) {
+      console.log(error.message);
+      this.emit('end');
+    }}))
+  .pipe(useref())
+  .pipe(gulp.dest('public/es'));
+});
 
-gulp.task('default', ['clean','images','icons'],function(){
+gulp.task('build-en', function() {
+  gulp.src('src/en/*.html')
+  .pipe(plumber({
+    errorHandler: function (error) {
+      console.log(error.message);
+      this.emit('end');
+    }}))
+  .pipe(useref())
+  .pipe(gulpif('*.css', uncss({
+    html: ['src/en/*.html']
+  })))
+  .pipe(gulpif('*.css', minifycss()))
+  .pipe(gulpif('*.css', minifycss()))
+  .pipe(gulp.dest('public/en'));
+});
+
+gulp.task('default', ['clean','images','icons','build-es','build-en'],function(){
   return gulp.src('src/*.html')
   .pipe(plumber({
     errorHandler: function (error) {
@@ -95,11 +121,6 @@ gulp.task('default', ['clean','images','icons'],function(){
   .pipe(gulpif('*.js', jshint()))
   .pipe(gulpif('*.js', jshint.reporter('default')))
   .pipe(gulpif('*.js', uglify()))
-  .pipe(gulpif('*.css', uncss({
-    html: ['src/*.html']
-  })))
-  .pipe(gulpif('*.css', minifycss()))
-  .pipe(gulpif('*.css', minifycss()))
   .pipe(gulp.dest('public'));
 });
 
