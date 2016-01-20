@@ -91,6 +91,11 @@ gulp.task('build-es', function() {
       this.emit('end');
     }}))
   .pipe(useref())
+  .pipe(gulpif('*.css', uncss({
+    html: ['src/es/*.html']
+  })))
+  .pipe(gulpif('*.css', minifycss()))
+  .pipe(gulpif('*.css', minifycss()))
   .pipe(gulp.dest('public/es'));
 });
 
