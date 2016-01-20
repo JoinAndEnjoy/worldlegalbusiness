@@ -5,7 +5,7 @@ session_start();
 // Enter the $site_owners_email that you want to emails to be sent to.
 // Example $site_owners_email = "joe.doe@yourdomain.com";
 
-$site_owners_email = "gerencia@wlegalb.co";  // Replace this with your own email address
+$site_owners_email = "ce.roso398@gmail.com";  // Replace this with your own email address
 $subject = "Formulario de contacto - " . filter_input(INPUT_POST, 'subject');                       // subject to email             
 
 

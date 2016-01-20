@@ -14,6 +14,7 @@ var plumber = require('gulp-plumber');
 var useref = require('gulp-useref');
 var del = require('del');
 var uncss = require('gulp-uncss');
+require('events').EventEmitter.defaultMaxListeners = 0;
 
 var config = {
      bowerDir: 'src/libs' 
@@ -117,7 +118,7 @@ gulp.task('build-en', function() {
 
 gulp.task('dest-php', function(){
    //process.stdout.write("Enter here");
-   var phpSrc = 'src/scripts/**/*.php';
+   var phpSrc = 'src/scripts/*.php';
    return gulp.src(phpSrc)
    .pipe(plumber({
     errorHandler: function (error) {
