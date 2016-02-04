@@ -190,7 +190,7 @@ var actual_url = window.location.href;
 if(actual_url.indexOf("/en/") != -1||actual_url.indexOf("/es/") != -1){
   var relativepath = "../images";
 }else{
-  window.location.href = "en/index.html";
+  window.location.href = "es/index.html";
 }
 
 $("#angela").click(function(){
@@ -213,7 +213,7 @@ $("#carlos").click(function(){
 });
 $("#claudia").click(function(){
   $(".img-wrapper").css("background","url("+ relativepath+"/team-4.jpg) no-repeat center center");
-  $(".description h3").html("Claudia Parra Gutierrez");
+  $(".description h3").html("Claudia Parra Martinez");
   $(".description p").removeClass("active");
   $("#descr-claudia").addClass("active");
 });
